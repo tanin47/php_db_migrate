@@ -24,7 +24,7 @@ How to use it
 6. Rollback the latest migration with ```php migrate.php down```
 7. Drop the database with ```php migrate.php drop```
 
-* You might need to find where your PHP's binary located.
+You might need to find where your PHP's binary located.
 
 
 How to contribute
