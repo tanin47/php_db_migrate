@@ -1,9 +1,9 @@
 PHP Database Migration
 ==============================
 
-This is a database migration library for PHP/MySQL.
+This is a database migration library for PHP/MySQL. It mimics the behaviour of Ruby-on-Rails's database migration.
 
-It mimics the behaviour of Ruby-on-Rails's database migration.
+A database migration script is generated with a unique identifier. This means any person in your team can create a script independently, and, later in time, you guys can sync your scripts (with a source control or whatever) and update your database's structure with a single command.
 
 It supports:
 
