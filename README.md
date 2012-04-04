@@ -11,6 +11,7 @@ It supports:
 * Drop database
 * Migrate database to the latest point
 * Rollback one by one
+* Get a SQL for your current schemas
 
 
 How to use it
@@ -21,8 +22,9 @@ How to use it
 3. Generate a migration script by ```php migrate.php generate create_first_table```
 4. Open your new migration script in the directiory ```migration``` and edit it. ```up()``` is for the migrating action, and ```down()``` is for the rollback action.
 5. Run migration with ```php migrate.php up```
-6. Rollback the latest migration with ```php migrate.php down```
-7. Drop the database with ```php migrate.php drop```
+6. Run ```php migrate.php dump``` in order to generate a SQL for your current schemas.
+7. Rollback the latest migration with ```php migrate.php down```
+8. Drop the database with ```php migrate.php drop```
 
 You might need to find where your PHP's binary located.
 
