@@ -1,5 +1,6 @@
 <?php
 
+
 $migrations = getAllMigrations();
 
 foreach ($migrations as $name) {
@@ -9,6 +10,7 @@ foreach ($migrations as $name) {
 
 	$result = mysql_query("SELECT * FROM `schema_migrations` WHERE `version` = '" . $version . "'");
 	$data = mysql_fetch_array($result, MYSQL_ASSOC);
+	mysql_free_result($result);
 
 	if ($data) {
 		echo "\t Previously migrated. Do nothing.\n\n";
@@ -18,7 +20,7 @@ foreach ($migrations as $name) {
 	echo "\t" . $version . " hasn't been migrated.\n";
 
 	// perform it
-	require "migration/" . $name . ".php";
+	require $migration_dir . "/" . $name . ".php";
 	$migration_instance = initMigrationClassWithFilename($name);
 	$migration_instance->up();
 

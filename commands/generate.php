@@ -14,7 +14,7 @@ for ($i=3;$i<sizeof($argv);$i++) {
 }
 
 $name = slug($name);
-$migration_filename = "migration/" . $version . "_" . $name . ".php";
+$migration_filename = $migration_dir . "/" . $version . "_" . $name . ".php";
 
 $template_content = "<?php
 

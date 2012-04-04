@@ -1,5 +1,6 @@
 <?php
 
+
 function initMigrationClassWithFilename($name)
 {
 	$version = substr($name, 0, 17);
@@ -30,10 +31,12 @@ function initMigrationClassWithFilename($name)
 
 function getAllMigrations() {
 
+	global $migration_dir;
+
 	$migrations = array();
-	$dh = opendir("migration");
+	$dh = opendir($migration_dir);
 	while (($file = readdir($dh)) !== false) {
-		if (is_file("migration/" . $file)) {
+		if (is_file($migration_dir . "/" . $file)) {
 			$migrations[] = substr($file, 0, -4);
 		}
 	}

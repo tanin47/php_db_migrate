@@ -16,6 +16,7 @@ if ($exist == true) {
 
 mysql_query("CREATE DATABASE `" . $mysql_database_name . "`;") or die("Cannot create database: " . mysql_error() . "\n");
 
+
 echo "The database '" . $mysql_database_name . "' is created.\n";
 
 ?>

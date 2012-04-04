@@ -15,7 +15,7 @@ $full_name = "";
 
 foreach ($migrations as $name) {
 	if (preg_match("/" . $version . "/i", $name)) {
-		require "migration/" . $name . ".php";
+		require $migration_dir . "/" . $name . ".php";
 		$full_name = $name;
 		break;
 	}
@@ -25,6 +25,7 @@ $migration_instance = initMigrationClassWithFilename($version);
 $migration_instance->down();
 	
 mysql_query("DELETE FROM `schema_migrations` WHERE `version` = '" . $version . "'");
+
 
 echo "Undo " . $full_name . ".php\n";
 

@@ -1,6 +1,6 @@
 <?php
 
-  class hello_20120403042358996
+  class hello_20120404042809101 // don't modify class name
   {
     public function up() { 
       mysql_query('CREATE TABLE `here`');
