@@ -4,11 +4,12 @@
   {
     public function up() { 
       mysql_query('CREATE TABLE `members` (
-					`id` INT(10) AUTO_INCREMENT PRIMARY KEY,
-					`username` VARCHAR(255),
-					`email` VARCHAR(255),
-					`password` VARCHAR(255)
-					);');
+          `id` INT(10) AUTO_INCREMENT PRIMARY KEY,
+          `username` VARCHAR(255),
+          `email` VARCHAR(255),
+          `password` VARCHAR(255),
+          `age` INT(10)
+          );');
 
       mysql_query('CREATE INDEX `username_0` ON `members` (`username`);');
     }
