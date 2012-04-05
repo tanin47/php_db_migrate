@@ -16,7 +16,7 @@ while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
 	$create_table_result = mysql_query("SHOW CREATE TABLE `" . $table_name . "`;");
 	$this_sql = mysql_fetch_array($create_table_result, MYSQL_NUM);
 
-	$dump_sql .= $this_sql[1] . "\n\n";
+	$dump_sql .= "mysql_query(\"" . $this_sql[1] . "\");\n\n";
 
 	mysql_free_result($create_table_result);
 }
