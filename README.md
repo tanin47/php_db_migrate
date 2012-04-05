@@ -28,6 +28,7 @@ How to use it
 
 You might need to find where your PHP's binary located.
 
+Examples of migration scripts are in the directory ```migration_example```.
 
 How to contribute
 ------------------------
