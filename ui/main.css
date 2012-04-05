@@ -1,0 +1,35 @@
+.information
+{
+	display: block;
+	color: #333333;
+
+	margin-top: 20px;
+}
+
+#toolbar
+{
+	display: block;
+
+	margin-top: 20px;
+}
+
+#output
+{
+	margin-top: 20px;
+	padding: 20px 20px 20px 20px;
+
+	display: block;
+
+	border: 5px solid #AAAAAA;
+	background-color: #333333;
+	color: #FFFFFF;
+	font-family: "Courier New";
+}
+
+#output > span
+{
+	display: block;
+	border-bottom: 2px solid #FFFFFF;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}

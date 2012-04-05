@@ -28,6 +28,7 @@ if (file_put_contents($schema_filename, $dump_sql) === false)  {
 	echo "Cannot create the file '" . $schema_filename . "'\n";
 }
 
+chmod($schema_filename, 0777);
 echo "All schemas are dumped into ". $schema_filename;
 
 ?>

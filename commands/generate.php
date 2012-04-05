@@ -33,7 +33,11 @@ $template_content = "<?php
 ";
 
 if (file_put_contents($migration_filename, $template_content) === false)  {
-	echo "Cannot create the file '" . $migration_filename . "'\n";
+	die("Cannot create the file '" . $migration_filename . "'\n");
 }
+
+chmod($migration_filename, 0777);
+
+echo "The script '" . $migration_filename . "'.\n";
 
 ?>

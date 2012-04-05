@@ -30,6 +30,15 @@ You might need to find where your PHP's binary located.
 
 Examples of migration scripts are in the directory ```migration_example```.
 
+
+How to use it through UI
+--------------------------
+
+1. Let your Apache point to the root folder of this project somehow
+2. ```chmod 777``` the directory ```migration``` and ```schema```
+3. Open your browser and point to ```index.php```
+
+
 How to contribute
 ------------------------
 

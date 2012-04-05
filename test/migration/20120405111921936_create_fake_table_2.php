@@ -1,6 +1,6 @@
 <?php
 
-  class create_fake_table_2_20120405030230193 // don't modify class name
+  class create_fake_table_2_20120405111921936 // don't modify class name
   {
     public function up() { 
       mysql_query('CREATE TABLE `posts` (
