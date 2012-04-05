@@ -1,13 +1,14 @@
 var handler = {};
 
-handler.execute = function(cmd) {
+handler.showToolbar = function() {
+	$('#toolbar').css('visibility', 'visible');
+};
 
+handler.hideToolbar = function() {
 	$('#toolbar').css('visibility', 'hidden');
+};
 
-	var span = $('<span></span>')
-	$('#output').prepend(span);
-
-	$(span).html('Loading...');
+handler.execute = function(cmd) {
 
 	var extra_argument = "";
 	if (cmd == "generate") {
@@ -17,6 +18,13 @@ handler.execute = function(cmd) {
 	} else {
 		if (!confirm('Are you sure you want to execute ' + cmd + '?')) return;
 	}
+
+	handler.showToolbar();
+
+		var span = $('<span></span>')
+	$('#output').prepend(span);
+
+	$(span).html('Loading...');
 
 	$.ajax({
 		type: "POST",
@@ -32,11 +40,11 @@ handler.execute = function(cmd) {
 		success: function(data){
 			$(span).html("<b>" + new Date() + "</b><br/>\n"
 							+ data.replace(/\n/g, "<br/>"));
-			$('#toolbar').css('visibility', 'visible');
+			handler.showToolbar();
 		},
 		error: function(req, status, e){
 			alert("There is something wrong with the internet connection.");
-			$('#toolbar').css('visibility', 'visible');
+			handler.showToolbar();
 		}
 	});
-}
+};
